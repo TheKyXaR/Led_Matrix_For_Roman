@@ -12,4 +12,4 @@ Led_Matrix_For_Roman - це web проєкт який дозволяє зада�
 ```sh
 git clone https://github.com/TheKyXaR/Led_Matrix_For_Roman
 ```
-2. Запустіть файл index.html
+2. Запустіть файл index.html в браузері
