@@ -7,9 +7,11 @@ html, body {
 	background-color: black;
 }
 
+/* n for squere */
+
 .window {
-	height: 95%;
-	width: 140vh;
+	height: 60%; /* n persent */
+	width: 110vh; /* 50 + n vh */
 	transform: translate(-50%, -50%);
 	position: absolute;
 	top: 50%;
@@ -18,18 +20,20 @@ html, body {
 
 .draw {
 	height: 95%;
-	width: 90vh;
+	width: 60vh; /* n vh */
 	transform: translate(-50%, -50%);
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	display: grid;
 }
 
 .side_panel {
 	height: 95%;
 	width: 24vh;
-	color: white;
 	background-color: black;
+	color: white;
+
 }
 
 .left_panel {
@@ -49,23 +53,49 @@ html, body {
 }
 
 .left_panel_button {
-	height: 44.6vh;
+	height: 49%;
 	width: 100%;
 	border: solid 1px white;
-	color: white;
 	background-color: black;
+	color: white;
 }
 
 .left_top_button {
 	border-top-left-radius: 10px;
 	position: absolute;
 	top: 0%;
+
 }
 
 .left_bottom_button {
 	border-bottom-left-radius: 10px;
 	position: absolute;
 	bottom: 0%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.settings_left_panel {
+	width: 90%;
+	height: 15%;
+	text-align: center;
+	border: solid 0px;
+	border-radius: 10px;
+}
+
+.settings_left_panel:hover {
+	background-color: black;
+	clip-path: black;
+	color: white;
+}
+
+.settings_left_panel:focus {
+	background-color: black;
+	clip-path: black;
+	border: solid 0px;
+	color: white;
 }
 
 .pixel {
