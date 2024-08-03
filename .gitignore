@@ -16,3 +16,6 @@ db.sqlite3
 # OS-specific files
 .DS_Store
 Thumbs.db
+
+# sublime text
+.sublime-project
