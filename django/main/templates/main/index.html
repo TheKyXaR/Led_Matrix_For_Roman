@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'main/index.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'main/input_range.css' %}">
+</head>
+<body>
+
+	<div id="drop-zone"></div>
+
+	<div class="window" id="window">
+		<div class="draw" id="draw"></div>
+		<div class="side_panel left_panel" id="left_panel">
+			<button class="left_panel_button left_top_button" id="clear" onclick="clear_win();">Clear</button>
+			<button class="left_panel_button left_bottom_button" id="switch_color">
+				<input type="number" placeholder="Horizontal count" id="h_count" class="settings_left_panel">
+				<input type="number" placeholder="Vertical count" id="v_count" class="settings_left_panel">
+			</button>
+		</div>
+		<button class="side_panel right_panel" onclick="export_file();">File</button>
+	</div>
+
+</body>
+	
+	<script type="text/javascript" src="{% static 'main/index.js' %}"></script>
+
+</html>
