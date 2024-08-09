@@ -1,16 +1,14 @@
 const
-	win = document.getElementById('window');
+	config = document.getElementById('load_config').value;
 	draw_window = document.getElementById('draw');
-	input_hor_count = document.getElementById('h_count');
-	input_ver_count = document.getElementById('v_count');
-	left_panel = document.getElementById('left_panel');
-	dropZone = document.getElementById('drop-zone');
-	fileContent = document.getElementById('file-content');
-	configuration = document.getElementById('configuration')
+	validJSON = config.replace(/0x([0-9A-Fa-f]+)/g, '"0x$1"');
+	array = JSON.parse(validJSON);
+	numericArray = array.map(row => row.map(item => parseInt(item, 16)));
+	hexArray = numericArray.map(row => row.map(item => '0x' + item.toString(16).padStart(6, '0')));
 
 var
-	win_height = 10;
-	win_width = 10;
+	win_height = hexArray.length
+	win_width = hexArray[0].length
 
 // create field of divs and set pixel status
 var pixels_status = [];
@@ -26,7 +24,32 @@ function create_field(win_height, win_width) {
 	}
 	draw_window.innerHTML = elements;
 }
+
 create_field(win_height, win_width);
+draw_window.style.gridTemplateRows = `repeat(${hexArray.length}, 1fr)`;
+draw_window.style.gridTemplateColumns = `repeat(${hexArray[0].length}, 1fr)`;
+
+pixels = document.getElementsByClassName('pixel');
+for (var y = 0; y < hexArray.length; y++) {
+	for (var x = 0; x < hexArray[y].length; x++) {
+		pixels[hexArray.length * y + x].style.backgroundColor = hexArray[y][x] == "0x000000" ? "black" : "white";
+	}
+}
+
+pixels_status = hexArray;
+pixels_status = pixels_status.map(subArray => subArray.map(str => parseInt(str, 16)));
+configuration.value = '[\n' + pixels_status.map(subArray => '	[' + subArray.map(num => '0x' + num.toString(16).toUpperCase().padStart(6, '0')).join(', ') + ']').join(',\n') + '\n]';
+configuration.innerHTML = '[\n' + pixels_status.map(subArray => '	[' + subArray.map(num => '0x' + num.toString(16).toUpperCase().padStart(6, '0')).join(', ') + ']').join(',\n') + '\n]';
+
+const
+	win = document.getElementById('window');
+	input_hor_count = document.getElementById('h_count');
+	input_ver_count = document.getElementById('v_count');
+	left_panel = document.getElementById('left_panel');
+	dropZone = document.getElementById('drop-zone');
+	fileContent = document.getElementById('file-content');
+	configuration = document.getElementById('configuration')
+
 
 // function cleat widow
 function clear_win() {

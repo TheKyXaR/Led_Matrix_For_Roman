@@ -26,9 +26,13 @@ SECRET_KEY = 'django-insecure-vs@ob)$zc9#d_v3!p%g!#xfc5)cjize6g4!ex8e=-!isttw9a0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '530b-91-237-241-255.ngrok-free.app'
+]
 
-CSRF_TRUSTED_ORIGINS = []
+CSRF_TRUSTED_ORIGINS = [
+    "https://530b-91-237-241-255.ngrok-free.app"
+]
 
 LOGIN_REDIRECT_URL = '/'
 

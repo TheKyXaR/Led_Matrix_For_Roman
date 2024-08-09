@@ -22,3 +22,14 @@ def save_config(request, user_pk) :
 						  author=user)
 
 	return HttpResponseRedirect(reverse('main:index'))
+
+def config_load(request, config_pk) :
+	config = get_object_or_404(Config, pk = config_pk)
+	user = User.objects.get(pk = config.author_id)
+
+	return render(request,
+				  "main/config_load.html",
+				  {
+				  	"config": config,
+				  	"user": user
+				  })

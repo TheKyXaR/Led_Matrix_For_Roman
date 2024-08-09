@@ -44,7 +44,7 @@
 		<div class="form_elem configutarions">
 		{% if configs %}
 			{% for config in configs %}
-				<a href="">
+				<a href="{% url 'main:config' config.id %}">
 					<div class="configutarion_elem">
 						<div class="configutarion_info">{{ config.id }}</div>
 						<div class="configutarion_info">{{ config.name }}</div>
@@ -52,7 +52,7 @@
 				</a>
 			{% endfor %}
 		{% else %}
-			<a href="">
+			<a href="{% url 'main:index' %}">
 				<div class="configutarion_elem">
 					<div class="configutarion_info">You don`t have conigs</div>
 				</div>
