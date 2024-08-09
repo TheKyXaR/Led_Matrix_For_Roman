@@ -89,7 +89,7 @@ gameContainer.addEventListener('mousedown', (e) => {
 gameContainer.addEventListener('mouseup', () => {
     isDrawing = false;
     form.style.zIndex = "4";
-    form.style.opacity = "100%";
+    form.style.opacity = "95%";
 });
 
 gameContainer.addEventListener('mousemove', (e) => {

@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'registration/profile.css' %}">
+	<link rel="stylesheet" href="{% static 'registration/styles.css' %}">
+</head>
+<body>
+
+	<div id="background"></div>
+
+	<div id="form" >
+
+		<div class="form_elem user_settings">
+			<div><a href="{% url 'main:index' %}">{{ user.username }}</a></div>
+			{% if user.email %}
+				<div>{{ user.email }}</div>
+			{% endif %}
+			{% if request.user.id == user.id %}
+				<hr>
+				<div>
+					<form class="form" method="post" action="{% url 'users:change_password' user.id %}">
+						{% csrf_token %}
+						<input type="text" name="password" class="form_elem_elem" placeholder="password">
+						<button type="sumbit" class="form_elem_elem">change password</button>
+					</form>
+				</div>
+				<div>
+					<form class="form" method="post" action="{% url 'users:change_email' user.id %}">
+						{% csrf_token %}
+						<input type="text" name="email" class="form_elem_elem" placeholder="email">
+						<button type="sumbit" class="form_elem_elem">set email</button>
+					</form>
+				</div>
+				<hr>
+			{% endif %}
+		</div>
+
+
+		<div class="form_elem configutarions">
+		{% if configs %}
+			{% for config in configs %}
+				<a href="">
+					<div class="configutarion_elem">
+						<div class="configutarion_info">{{ config.id }}</div>
+						<div class="configutarion_info">{{ config.name }}</div>
+					</div>
+				</a>
+			{% endfor %}
+		{% else %}
+			<a href="">
+				<div class="configutarion_elem">
+					<div class="configutarion_info">You don`t have conigs</div>
+				</div>
+			</a>
+		{% endif %}
+
+		</div>
+	</div>
+
+	<script src="{% static 'registration/script.js' %}"></script>
+
+</body>
+</html>

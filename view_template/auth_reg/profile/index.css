@@ -1,0 +1,94 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-size: 2.5vh;
+	z-index: 3;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+#form {
+	background-color: black;
+	opacity: 95%;
+	height: 57%;
+	width: 60vh;
+	border: solid 1px white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.form_elem {
+	text-align: center;
+	color: white;
+	width: 80%;
+}
+
+.user_settings {
+	height: 40%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.configutarions {
+	margin: 0px 0px 2vh 0px;
+	height: 60%;
+	overflow-y: scroll;
+}
+
+.form {
+	height: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.form_elem_elem {
+	width: 40%;
+	font-size: 66%;
+	text-align: center;
+}
+
+.configutarion_elem {
+	border: solid 1px white;
+	margin: 5px 5px 5px 0px;
+	height: 10vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.configutarion_info {
+	font-size: 1.7vh;
+	width: 50%;
+}
+
+.configutarion_elem:hover {
+	border: solid 1px black;
+	background-color: white;
+	color: black;
+}
+
+.configutarions::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.configutarions::-webkit-scrollbar {
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.configutarions::-webkit-scrollbar-thumb {
+	border: solid 1px white;
+	background-color: #000000;
+}

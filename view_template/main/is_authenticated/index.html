@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="header.css">
+</head>
+<body>
+
+	<div id="drop-zone"></div>
+
+	<header>
+		<div class="header_elem">
+			<a href="">Store</a>
+		</div>
+		<div class="header_elem">
+			<a href="">Led Matrix</a>
+		</div>
+		<div class="header_elem">
+			<div class="log_reg">
+				<a href="">Log</a>
+			</div>
+			<div class="log_reg">
+				<a href="">Reg</a>
+			</div>
+		</div>
+	</header>
+
+	<div class="window" id="window">
+		<content>
+			<div class="draw" id="draw"></div>
+			<div class="side_panel left_panel" id="left_panel">
+				<button class="left_panel_button left_top_button" id="clear" onclick="clear_win();">Clear</button>
+				<button class="left_panel_button left_bottom_button" id="switch_color">
+					<input type="number" placeholder="X count" id="h_count" class="settings_left_panel">
+					<input type="number" placeholder="Y count" id="v_count" class="settings_left_panel">
+				</button>
+			</div>
+			<div class="side_panel right_panel">
+				<button class="right_panel_button right_top_button" onclick="export_file();">File</button>
+				<button class="right_panel_button right_bottom_button">
+					<form style="height: 100%; width: 100%;" class="form" method="post" action="">
+						<div name="configuration" id="configuration"></div>
+						<input type="text" placeholder="Name config" class="settings_right_panel">
+						<input type="submit" value="Save config" class="settings_right_panel">
+					</form>
+				</button>
+			</div>
+		</content>
+	</div>
+
+	<script type="text/javascript" src="index.js"></script>
+
+</body>
+</html>

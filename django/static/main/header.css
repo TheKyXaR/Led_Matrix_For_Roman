@@ -1,0 +1,32 @@
+header {
+	height: 3.5%;
+	width: 90vh;
+	display: flex;
+	justify-content: space-around;
+	border: solid 1px white;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	transform: translate(-50%, -100%);
+	position: absolute;
+	top: 19vh;
+	left: 50%;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+	font-size: 3vh;
+}
+
+.header_elem {
+	color: white;
+	display: flex;
+	justify-content: space-around;
+	width: 20%;
+}
+
+.log_reg {
+	font-size: 3vh;
+	display: flex;
+	flex-direction: row;
+}

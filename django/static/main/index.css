@@ -1,0 +1,140 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-size: 2.5vw;
+
+	-webkit-touch-callout: none;
+  	-webkit-user-select: none;
+  	-khtml-user-select: none;
+  	-moz-user-select: none;
+  	-ms-user-select: none;
+  	user-select: none;
+  	z-index: 1;
+}
+
+html, body {
+	background-color: black;
+}
+
+#drop-zone {
+	width: 95%;
+	height: 95vh;
+	border: 2px dashed #ccc;
+	opacity: 0%;
+	z-index: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #ccc;
+	font-size: 16px;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.window {
+	height: 60%;
+	width: 90vh;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.draw {
+	height: 100%;
+	width: 60vh;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(10, 1fr);
+}
+
+.side_panel {
+	height: 100%;
+	width: 14vh;
+	background-color: black;
+	color: white;
+
+}
+
+.left_panel {
+	transform: translate(0, -50%);
+	position: absolute;
+	top: 50%;
+}
+
+.right_panel {
+	border-bottom-right-radius: 10px;
+	transform: translate(0, -50%);
+	position: absolute;
+	top: 50%;
+	right: 0%;
+}
+
+.left_panel_button, .right_panel_button {
+	height: 49%;
+	width: 100%;
+	border: solid 1px white;
+	background-color: black;
+	color: white;
+}
+
+.left_top_button, .right_top_button {
+	position: absolute;
+	top: 0%;
+
+}
+
+.left_bottom_button, .right_bottom_button, .form {
+	position: absolute;
+	bottom: 0%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.left_bottom_button {
+	border-bottom-left-radius: 10px;
+}
+
+.right_bottom_button {
+	border-bottom-right-radius: 10px;
+}
+
+.settings_left_panel, .settings_right_panel {
+	width: 90%;
+	height: 15%;
+	text-align: center;
+	font-size: 0.75vw;
+	border: solid 0px;
+	border-radius: 10px;
+}
+
+.settings_left_panel:hover, .settings_right_panel:hover {
+	background-color: black;
+	clip-path: black;
+	color: white;
+}
+
+.settings_left_panel:focus, .settings_right_panel:focus {
+	background-color: black;
+	clip-path: black;
+	border: solid 0px;
+	color: white;
+}
+
+.pixel {
+	box-sizing: border-box;
+	border: solid 1px white;
+}
+
+#configuration {
+	display: none;
+}

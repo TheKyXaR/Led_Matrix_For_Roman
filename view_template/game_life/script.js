@@ -1,9 +1,12 @@
 const gameContainer = document.getElementById('gameContainer');
 const cellSize = 51;
+const speed = 50; // Швидкість оновлення в мілісекундах
 let rows = Math.floor(window.innerHeight / cellSize);
 let cols = Math.floor(window.innerWidth / cellSize);
 
 let grid = createRandomGrid(rows, cols);
+let isDrawing = false;
+let animationFrame;
 
 function createRandomGrid(rows, cols) {
     let grid = [];
@@ -12,6 +15,8 @@ function createRandomGrid(rows, cols) {
         for (let j = 0; j < cols; j++) {
             const cell = document.createElement('div');
             cell.classList.add('cell');
+            cell.dataset.row = i;
+            cell.dataset.col = j;
             gameContainer.appendChild(cell);
             row.push(Math.random() > 0.5 ? 1 : 0);
         }
@@ -66,9 +71,36 @@ function getAliveNeighbors(grid, x, y) {
 }
 
 function update() {
-    grid = getNextGeneration(grid);
-    drawGrid(grid);
-    setTimeout(update, 150); // Затримка між поколіннями в мілісекундах
+    if (!isDrawing) {
+        grid = getNextGeneration(grid);
+        drawGrid(grid);
+    }
+    setTimeout(update, speed);
+}
+
+gameContainer.addEventListener('mousedown', (e) => {
+    isDrawing = true;
+    modifyCell(e);
+});
+
+gameContainer.addEventListener('mouseup', () => {
+    isDrawing = false;
+});
+
+gameContainer.addEventListener('mousemove', (e) => {
+    if (isDrawing) {
+        modifyCell(e);
+    }
+});
+
+function modifyCell(e) {
+    const cell = e.target;
+    if (cell.classList.contains('cell')) {
+        const row = cell.dataset.row;
+        const col = cell.dataset.col;
+        grid[row][col] = 1;
+        drawGrid(grid);
+    }
 }
 
 drawGrid(grid);
