@@ -27,11 +27,9 @@ SECRET_KEY = 'django-insecure-vs@ob)$zc9#d_v3!p%g!#xfc5)cjize6g4!ex8e=-!isttw9a0
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '530b-91-237-241-255.ngrok-free.app'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://530b-91-237-241-255.ngrok-free.app"
 ]
 
 LOGIN_REDIRECT_URL = '/'
@@ -48,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
     'users.apps.UsersConfig',
+    'store.apps.StoreConfig',
 ]
 
 MIDDLEWARE = [

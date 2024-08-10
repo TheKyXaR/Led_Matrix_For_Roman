@@ -1,0 +1,103 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+#form {
+	background-color: black;
+	opacity: 95%;
+	height: 80%;
+	width: 57vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	border: solid 1px white;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+	width: 80%;
+}
+
+.form_elem {
+	text-align: center;
+	color: white;
+	width: 80%;
+}
+
+.home {
+	font-size: 2.5vh;
+	height: 5%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.search {
+	height: 10%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.search_elem {
+	height: 40%;
+}
+
+.configutarions {
+	border-top-width: 75%;
+	height: 90%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.configutarions::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.configutarions::-webkit-scrollbar {
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.configutarions::-webkit-scrollbar-thumb {
+	border: solid 1px white;
+	background-color: #000000;
+}
+
+.config {
+	border: solid 1px white;
+	height: 10vh;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	margin: 10px 0px 0px 5%;
+}
+
+.config_top {
+	display: flex;
+	justify-content: space-between;
+}
+
+.config_elem_top {
+	width: 33%;
+}
+
+.config_bottom {
+	margin-top: auto;
+}
+
+.config_top, .config_bottom {
+	height: 50%;
+}
+
+.config_info {
+	line-height: 300%;
+}

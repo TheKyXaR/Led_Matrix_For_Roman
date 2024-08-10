@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Store</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'store/index.css' %}">
+
+	<style>
+		html, body {
+			background-color: black;
+		}
+	</style>
+
+</head>
+<body>
+
+	<div id="background"></div>
+
+	<div id="form">
+		<div class="form_elem home">
+			<a href="{% url 'main:index' %}">----> Home <----</a>
+		</div>
+		<div class="form_elem search">
+			<input class="search_elem" type="text" name="" placeholder="search here">
+			<input class="search_elem" type="submit" value="search">
+		</div>
+		<div class="form_elem configutarions">
+			<hr>
+			{% if configs %}
+				{% for config in configs %}
+					<div class="config">
+						<div class="config_top">
+							<div class="config_info config_elem_top">{{ config.id }}</div>
+							<div class="config_info config_elem_top"><a href="{% url 'main:config' config.id %}">{{ config.name }}</a></div>
+							<div class="config_info config_elem_top"><a href="{% url 'users:profile' config.author.id %}">{{ config.author }}</a></div>
+						</div>	
+						<div class="config_info config_bottom">{{ config.date }}</div>
+					</div>
+				{% endfor %}
+			{% else %}
+				<div class="config" style="line-height: 300%; text-align: center;">
+					No saved configurations yet, be the first
+				</div>
+			{% endif %}
+		</div>
+	</div>
+
+</body>
+</html>
